@@ -1,0 +1,22 @@
+@layout.app({title:'Dashboard'})
+  @slot('main')
+
+    <h1>
+      Admin Dashboard
+    </h1>
+
+    
+
+    <h2>
+      User List
+    </h2>
+    <ul>
+      @each((user,index) in users)
+        <li>
+          {{index+1}}. {{user.fullName }} - {{user.email}} <a href="/edit/{{user.id}}">Edit</a>
+        </li>
+      @end
+    </ul>
+
+  @endslot
+@end
